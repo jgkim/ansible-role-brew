@@ -30,6 +30,8 @@
     update_homebrew: yes
     upgrade_all: yes
   when: brew_upgrade_all
+  environment:
+    PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
 - name: Ensure configured Homebrew packages are installed.
   homebrew:
