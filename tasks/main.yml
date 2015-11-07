@@ -37,4 +37,4 @@
     state: present
   with_items: brew_packages
   environment:
-    PATH: "${HOMEBREW_DIR}/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
