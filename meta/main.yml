@@ -8,13 +8,10 @@ galaxy_info:
   license: MIT
   min_ansible_version: 1.4
   platforms:
-  - name: GenericUNIX
+  - name: OSX
     versions:
-      - any
-  - name: GenericLinux
-    versions:
-      - any
+      - 10.11
   galaxy_tags:
     - local
-    - development
     - system
+    - mac

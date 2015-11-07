@@ -1,6 +1,9 @@
 Ansible Role: brew
 ==================
 
+[![Build Status](http://img.shields.io/travis/jgkim/ansible-role-brew.svg?style=flat)](https://travis-ci.org/jgkim/ansible-role-brew)
+[![Ansible Galaxy](http://img.shields.io/ansible/role/5869.svg?style=flat)](https://galaxy.ansible.com/detail#/role/5869)
+
 This role ensures that Homebrew and its configured packages are installed on OS X.
 
 
