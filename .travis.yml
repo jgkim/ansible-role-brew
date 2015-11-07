@@ -1,13 +1,18 @@
 ---
 language: python
-python: "2.7"
-
-sudo: true
 
 os:
   - osx
 
+sudo: true
+
 before_install:
+  # Setup Python environment
+  - source terryfy/travis_tools.sh
+  - export CC=clang
+  - export CXX=clang++
+  - get_python_environment macpython 2.7.10 venv
+
   # Create Workspace folder
   - mkdir ~/Workspace/
 
