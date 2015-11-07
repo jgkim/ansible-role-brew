@@ -2,7 +2,7 @@
 - hosts: localhost
   connection: local
   vars:
-    brew_upgrade_all: True
+    brew_upgrade_all: False
     brew_packages:
       - wget
       - git

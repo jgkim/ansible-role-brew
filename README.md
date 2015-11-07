@@ -28,7 +28,7 @@ The path where Homebrew will be installed. By default, it will install Homebrew 
 brew_upgrade_all: False
 ```
 
-Whether to update Homebrew and upgrade all packages installed by it. If you prefer to manually update packages via `brew` command, leave this set to `False`. When it's `True`, this roles always makes a change.
+Whether to update Homebrew and upgrade all packages installed by it. If you prefer to manually update packages via `brew` command, leave this set to `False`.
 
 ```
 brew_packages
