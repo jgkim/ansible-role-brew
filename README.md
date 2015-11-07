@@ -1,0 +1,68 @@
+Ansible Role: brew
+==================
+
+This role ensures that Homebrew and its configured packages are installed on OS X.
+
+
+Requirements
+------------
+
+* Xcode Command Line Tools
+
+
+Role Variables
+--------------
+
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+
+```
+brew_dir: /opt/homebrew
+```
+
+The path where Homebrew will be installed. By default, it will install Homebrew to `/opt/homebrew`. Some things may not build when installed here, but to avoid [security issues](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md) and `/usr/local` being a mess with other stuff, it is recommend stick to this default.
+
+```
+brew_upgrade_all: False
+```
+
+Whether to update Homebrew and upgrade all packages installed by it. If you prefer to manually update packages via `brew` command, leave this set to `False`. When it's `True`, this roles always makes a change.
+
+```
+brew_packages
+  - wget
+```
+
+Packages you would like to make sure are installed via `brew install`.
+
+
+Dependencies
+------------
+
+None.
+
+
+Example Playbook
+----------------
+
+```
+- hosts: localhost
+  connection: local
+  vars:
+    brew_upgrade_all: True
+    brew_packages:
+      - wget
+  roles:
+     - { role: jgkim.brew }
+```
+
+
+License
+-------
+
+MIT
+
+
+Author Information
+------------------
+
+This role was written by [James G. Kim](http://jayg.org/), after being inspired by others.
