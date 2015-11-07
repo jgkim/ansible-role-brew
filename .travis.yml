@@ -5,7 +5,7 @@ sudo: true
 
 before_install:
   # Setup Python environment
-  - source terryfy/travis_tools.sh
+  - source tests/terryfy/travis_tools.sh
   - export CC=clang
   - export CXX=clang++
   - get_python_environment macpython 2.7.10 venv
