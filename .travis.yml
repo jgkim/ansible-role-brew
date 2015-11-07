@@ -1,8 +1,5 @@
 ---
-language: python
-
-os:
-  - osx
+language: objective-c
 
 sudo: true
 
