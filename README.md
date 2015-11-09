@@ -31,7 +31,7 @@ brew_upgrade_all: False
 Whether to update Homebrew and upgrade all packages installed by it. If you prefer to manually update packages via `brew` command, leave this set to `False`.
 
 ```
-brew_packages
+brew_packages:
   - wget
 ```
 
