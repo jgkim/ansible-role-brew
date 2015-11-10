@@ -1,10 +1,7 @@
 ---
 brew_dir: /opt/homebrew
-brew_taps:
-  - homebrew/completions
+brew_taps: []
 brew_upgrade_all: False
-brew_packages:
-  - wget
+brew_packages: []
 app_dir: /Applications
-cask_packages:
-  - google-chrome
+cask_packages: []

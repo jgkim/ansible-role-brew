@@ -25,8 +25,7 @@ brew_dir: /opt/homebrew
 The path where Homebrew will be installed. By default, it will install Homebrew to `/opt/homebrew`. Some things may not build when installed here, but to avoid [security issues](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md) and `/usr/local` being a mess with other stuff, it is recommend stick to this default.
 
 ```
-brew_taps:
-  - homebrew/completions
+brew_taps: []
 ```
 
 Taps you would like to make sure Homebrew has added via `brew tap`.
@@ -38,8 +37,7 @@ brew_upgrade_all: False
 Whether to update Homebrew and upgrade all packages installed by it. If you prefer to manually update packages via `brew` command, leave this set to `False`.
 
 ```
-brew_packages:
-  - wget
+brew_packages: []
 ```
 
 Packages you would like to make sure are installed via `brew install`.
@@ -51,8 +49,7 @@ app_dir: /Applications
 The path where applications will be installed. By default, it will install applications to `/Applications`.
 
 ```
-cask_packages:
-  - google-chrome
+cask_packages: []
 ```
 
 Packages you would like to make sure are installed via `brew cask install`.
@@ -71,9 +68,13 @@ Example Playbook
 - hosts: localhost
   connection: local
   vars:
+    brew_taps:
+      - homebrew/completions
     brew_upgrade_all: True
     brew_packages:
       - wget
+    cask_packages:
+      - google-chrome
   roles:
      - { role: jgkim.brew }
 ```
