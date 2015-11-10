@@ -44,6 +44,19 @@ brew_packages:
 
 Packages you would like to make sure are installed via `brew install`.
 
+```
+app_dir: /Applications
+```
+
+The path where applications will be installed. By default, it will install applications to `/Applications`.
+
+```
+cask_packages:
+  - google-chrome
+```
+
+Packages you would like to make sure are installed via `brew cask install`.
+
 
 Dependencies
 ------------

@@ -5,3 +5,6 @@ brew_taps:
 brew_upgrade_all: False
 brew_packages:
   - wget
+app_dir: /Applications
+cask_packages:
+  - google-chrome
