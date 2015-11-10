@@ -25,6 +25,14 @@
   args:
     creates: "{{ brew_dir }}/bin/brew"
 
+- name: Ensure configured taps are added.
+  homebrew_tap:
+    tap: "{{ item }}"
+    state: present
+  with_items: brew_taps
+  environment:
+    PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
+
 - name: Upgrade Homebrew and its managed packages if configured.
   homebrew:
     update_homebrew: yes

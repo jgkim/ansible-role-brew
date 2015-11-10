@@ -25,6 +25,13 @@ brew_dir: /opt/homebrew
 The path where Homebrew will be installed. By default, it will install Homebrew to `/opt/homebrew`. Some things may not build when installed here, but to avoid [security issues](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/El_Capitan_and_Homebrew.md) and `/usr/local` being a mess with other stuff, it is recommend stick to this default.
 
 ```
+brew_taps:
+  - homebrew/completions
+```
+
+Taps you would like to make sure Homebrew has added via `brew tap`.
+
+```
 brew_upgrade_all: False
 ```
 

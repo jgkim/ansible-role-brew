@@ -1,5 +1,7 @@
 ---
 brew_dir: /opt/homebrew
+brew_taps:
+  - homebrew/completions
 brew_upgrade_all: False
 brew_packages:
   - wget
