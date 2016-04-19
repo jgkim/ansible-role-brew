@@ -6,11 +6,11 @@ galaxy_info:
   description: Homebrew package installation for OS X
   company: Tipplr
   license: MIT
-  min_ansible_version: 1.4
+  min_ansible_version: 1.9
   platforms:
-  - name: OSX
+  - name: GenericUNIX
     versions:
-      - 10.11
+      - any
   galaxy_tags:
     - local
     - system

@@ -18,18 +18,20 @@
     group: "{{ group_name.stdout }}"
     mode: 0755
     state: directory
-  sudo: yes
+  become: yes
+  become_method: sudo
 
 - name: Ensure Homebrew is installed.
   shell: curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C {{ brew_dir }}
   args:
     creates: "{{ brew_dir }}/bin/brew"
+    warn: no
 
 - name: Ensure configured taps are added.
   homebrew_tap:
     tap: "{{ item }}"
     state: present
-  with_items: brew_taps
+  with_items: "{{ brew_taps }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
@@ -45,7 +47,7 @@
   homebrew:
     name: "{{ item }}"
     state: present
-  with_items: brew_packages
+  with_items: "{{ brew_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
@@ -57,19 +59,11 @@
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
-- name: Install and update Homebrew Cask.
-  homebrew:
-    name: brew-cask
-    state: present
-  when: cask_packages
-  environment:
-    PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
-
 - name: Ensure configured Homebrew Cask packages are installed.
   homebrew_cask:
     name: "{{ item }}"
     state: present
-  with_items: cask_packages
+  with_items: "{{ cask_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
     HOMEBREW_CASK_OPTS: "--appdir={{ app_dir }} --binarydir={{ brew_dir }}/bin"
