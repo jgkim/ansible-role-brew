@@ -51,14 +51,6 @@
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
-- name: Tap the Homebrew Cask repository.
-  homebrew_tap:
-    tap: caskroom/cask
-    state: present
-  when: cask_packages
-  environment:
-    PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
-
 - name: Ensure configured Homebrew Cask packages are installed.
   homebrew_cask:
     name: "{{ item }}"
