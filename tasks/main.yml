@@ -2,13 +2,13 @@
 - name: Assure the current user name.
   command: id -un
   register: user_name
-  always_run: yes
+  check_mode: no
   changed_when: False
 
 - name: Assure the current group name.
   command: id -gn
   register: group_name
-  always_run: yes
+  check_mode: no
   changed_when: False
 
 - name: Ensure a directory for Homebrew installation exists.
