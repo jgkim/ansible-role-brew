@@ -1,8 +1,5 @@
 ---
-language: objective-c
-
-sudo: required
-dist: trusty
+os: osx
 
 before_install:
   # Setup Python environment
