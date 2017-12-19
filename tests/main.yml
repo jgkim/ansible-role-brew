@@ -8,6 +8,6 @@
       - wget
       - git
     cask_packages:
-      - dterm
+      - iterm2
   roles:
     - ansible-role-brew

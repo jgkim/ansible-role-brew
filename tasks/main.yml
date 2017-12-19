@@ -60,4 +60,4 @@
   with_items: "{{ cask_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
-    HOMEBREW_CASK_OPTS: "--appdir={{ app_dir }} --binarydir={{ brew_dir }}/bin"
+    HOMEBREW_CASK_OPTS: "--appdir={{ app_dir }}"
