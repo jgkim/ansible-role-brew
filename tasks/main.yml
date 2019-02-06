@@ -37,7 +37,7 @@
 
 - name: Upgrade Homebrew and its managed packages if configured.
   homebrew:
-    install_options: "--build-from-source"
+    install_options: "build-from-source"
     update_homebrew: yes
     upgrade_all: yes
   when: brew_upgrade_all
@@ -46,7 +46,7 @@
 
 - name: Ensure configured Homebrew packages are installed.
   homebrew:
-    install_options: "--build-from-source"
+    install_options: "build-from-source"
     name: "{{ brew_packages }}"
     state: present
   environment:
