@@ -47,17 +47,15 @@
 - name: Ensure configured Homebrew packages are installed.
   homebrew:
     install_options: "--build-from-source"
-    name: "{{ item }}"
+    name: "{{ brew_packages }}"
     state: present
-  with_items: "{{ brew_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
 - name: Ensure configured Homebrew Cask packages are installed.
   homebrew_cask:
-    name: "{{ item }}"
+    name: "{{ cask_packages }}"
     state: present
-  with_items: "{{ cask_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
     HOMEBREW_CASK_OPTS: "--appdir={{ app_dir }}"
