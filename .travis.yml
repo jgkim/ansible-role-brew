@@ -6,7 +6,7 @@ before_install:
   - source tests/terryfy/travis_tools.sh
   - export CC=clang
   - export CXX=clang++
-  - get_python_environment macpython 2.7.10 venv
+  - get_python_environment macpython 3.7.3 venv
 
 install:
   # Install Ansible.
