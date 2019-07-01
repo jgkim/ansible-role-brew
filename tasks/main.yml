@@ -22,7 +22,7 @@
   become_method: sudo
 
 - name: Ensure Homebrew is installed.
-  shell: curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C {{ brew_dir }}
+  shell: curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C {{ brew_dir }}
   args:
     creates: "{{ brew_dir }}/bin/brew"
     warn: no
