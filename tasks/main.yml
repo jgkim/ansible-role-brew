@@ -31,7 +31,7 @@
   homebrew_tap:
     tap: "{{ item }}"
     state: present
-  with_items: "{{ brew_taps }}"
+  loop: "{{ brew_taps }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
@@ -57,6 +57,7 @@
   homebrew_cask:
     name: "{{ item }}"
     state: present
+    accept_external_apps: True
   loop: "{{ cask_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"

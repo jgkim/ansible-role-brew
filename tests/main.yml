@@ -3,7 +3,7 @@
   connection: local
   vars:
     brew_taps:
-      - homebrew/completions
+      - beeftornado/rmtree
     brew_packages:
       - wget
       - git
