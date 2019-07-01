@@ -40,22 +40,24 @@
     install_options: "build-from-source"
     update_homebrew: yes
     upgrade_all: yes
-  when: brew_upgrade_all
+  when: brew_upgrade_all|bool
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
 - name: Ensure configured Homebrew packages are installed.
   homebrew:
     install_options: "build-from-source"
-    name: "{{ brew_packages }}"
+    name: "{{ item }}"
     state: present
+  loop: "{{ brew_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
 - name: Ensure configured Homebrew Cask packages are installed.
   homebrew_cask:
-    name: "{{ cask_packages }}"
+    name: "{{ item }}"
     state: present
+  loop: "{{ cask_packages }}"
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
     HOMEBREW_CASK_OPTS: "--appdir={{ app_dir }}"
