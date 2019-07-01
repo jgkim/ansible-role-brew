@@ -44,6 +44,14 @@
   environment:
     PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
 
+- name: Upgrade Homebrew's managed cask packages if configured.
+  homebrew_cask:
+    upgrade_all: yes
+  when: brew_upgrade_all|bool
+  environment:
+    PATH: "{{ brew_dir }}/bin:{{ ansible_env.PATH }}"
+    HOMEBREW_CASK_OPTS: "--appdir={{ app_dir }}"
+
 - name: Ensure configured Homebrew packages are installed.
   homebrew:
     install_options: "build-from-source"
